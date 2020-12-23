@@ -95,6 +95,30 @@
 
 **Not :** Bu dersin kapsamı dışında olan bir çok android uygulama geliştirme alternatifi bulunmaktadır.
 
+<hr><hr>
+
+
+<h1>Hafta 2</h1>
+
+- Kullanıcının gördüğü arayüzlere Activity denir. Bir class ın Activity olabilmesi için AppCompatActivity classını extend etmesi gerekir.
+- Her activity onCreate method undan çalışmaya başlar.
+- setContentView() methodu ile Activity nin hangi xml dosyası ile çalışacağı set edilir.
+- Android uygulamalarının 3 ana parçası bulunur. AndroidManifest.xml  dosyası , java  ve res  klasörleridir.
+- AndroidManifest.xml : uygulamanın genel konfigürasyon dosyasıdır. İzinler,uygulama ikonu , Activityler, Intendler,tema vs ... burada tanımlıdır.
+- java klasörü : tüm java kodları burada bulunur.
+- res klasörü  : görüntü,ses,uygulamanın kullandığı metinler,arayüz tasarımları , renk bilgileri... kısaca uyugulamanın kullandığı tüm kaynaklar buradadır.
+- res klasörü altında bulunan mipmap klasöründe aynı görüntünün faklı çözünürlükte 6 kopyası bulunur. Uygulamanın açıldığı ekranın çözünürlüğüne göre uygun olan otomatik olarak    seçilir.
+- res klasörü altında bulunan values klasöründe uygulamanın metinsel verileri tutulur.
+- res klasörü altında bulunan layout klasöründe arayüz tasarımları bulunur.
+- java kodunda R sınıfı ile res klasörü arasında bağlantı kurulur.
+- Gradle uygulama geliştirme sürecini otomotize eden bir araçtır. Örneğin uygulamamızda kullanacağımız bir kütüphaneyi gradle a belirtir. Gradle otomotik olarak indirip uygulamaya dahil eder.
+- Ekranda görünen her nesne bir view nesnesidir. Bir view elamanına tıkladığımızda eğer varsa onClick methodu tetiklenir.
+- Intendler activiteler arası geçiş yapan ayrıca veri taşıyabilen nesnedir.
+
+
+
+
+
 
 
 
