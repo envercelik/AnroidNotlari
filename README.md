@@ -116,6 +116,27 @@
 - Intendler activiteler arası geçiş yapan ayrıca veri taşıyabilen nesnedir.
 
 
+<hr><hr>
+<h1>Hafta 3</h1>
+
+- View nesnelerine (TextView,EditText,Button...)  setOnClickListener() methodu ile dinleyici bir sınıf set edebiliriz.
+- setOnClickListener() methodu parametre olarak View.OnClickListener interface'sini implemente eden bir sınıf alır.
+- View nesnesine tıklandığında bu sınıfa ait olan onClick methodu tıklanan view nesnesini parametre alarak çağrılır.
+- Kısaca view nesnesine tıklandığında dinleyici sınıfın onClick methodu çağrılır.
+
+Bu örnekte dinleyici sınıf anonim olarak tanımlanmış
+
+```
+buttonComputeMass.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        
+    }
+});
+```
+
+- Hocanın CalculatorActivity'de uyguladığı yöntem bundan faklı bir şey değil.Nesnelere dinleyici sınıf set etmek için setOnClickListener() methoduna this parametresi  gönderiyor. This CalculatorActivity'i referans ediyor.CalculatorActivity'de View.OnClickListener interfacesini implemente eden bir sınıf olduğundan değişen bir şey olmuyor.
+
 
 
 
