@@ -1,0 +1,82 @@
+<resources>
+
+    <string name="app_name">App04Odev3Layouts</string>
+
+    <string-array name="cities">
+        <item>@array/city_names</item>
+        <item>@array/city_licence_plates</item>
+        <item>@array/city_descriptions</item>
+        <item>@array/city_images</item>
+    </string-array>
+
+
+    <string-array name="city_names">
+        <item>Istanbul</item>
+        <item>Ankara</item>
+        <item>Bursa</item>
+        <item>Eskişehir</item>
+        <item>Denizli</item>
+    </string-array>
+
+
+    <string-array name="city_licence_plates">
+        <item>34</item>
+        <item>06</item>
+        <item>16</item>
+        <item>26</item>
+        <item>20</item>
+    </string-array>
+
+
+    <integer-array name="city_images">
+        <item>@drawable/istanbul</item>
+        <item>@drawable/ankara</item>
+        <item>@drawable/bursa</item>
+        <item>@drawable/eskisehir</item>
+        <item>@drawable/denizli</item>
+    </integer-array>
+
+
+
+    <string-array name="city_descriptions">
+
+        <item>
+            İstanbul, Türkiye\'de yer alan şehir ve ülkenin 81 ilinden biri.
+            Ülkenin en kalabalık, ekonomik, tarihi ve sosyo-kültürel
+            açıdan önde gelen şehridir.
+        </item>
+
+        <item>
+            Ankara, Türkiye\'nin başkenti ve en kalabalık ikinci ilidir.
+            Nüfusu 2019 itibarıyla 5.639.076 kişidir.
+            Bu nüfus; 25 ilçe ve bu ilçelere bağlı 1425 mahallede yaşamaktadır.
+            İl genelinde nüfus yoğunluğu 215\'tir.
+        </item>
+
+        <item>
+            Bursa, Türkiye\'nin bir ili ve en kalabalık dördüncü şehri.
+            2019 itibarıyla 3.056.120 nüfusa sahiptir.
+            2016 Dünya Yaşanabilir Şehirler sıralamasında
+            Dünya\'da 28. Türkiye\'de 1. sırada yer almaktadır.
+        </item>
+
+        <item>
+            Eskişehir, Türkiye\'nin bir ili ve en kalabalık yirmi beşinci şehridir.
+            1993 yılında çıkarılan kanunla Büyükşehir Belediyesi olmuştur.
+            Nüfusu 2019 yılı TÜİK istatistiklerine göre 887.475\'tir.
+        </item>
+
+        <item>
+            Denizli, Türkiye\'nin bir ili ve en büyük on beşinci kent merkezidir.
+            Sanayi, ticaret, tarım, turizm, eğitim, kültür ve sanat alanlarında
+            ülkenin en gelişmiş illerinden biridir.
+        </item>
+
+    </string-array>
+
+
+
+
+
+
+</resources>

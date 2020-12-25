@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp"
+        android:background="#00838F">
+
+        <ImageView
+
+            android:id="@+id/image_view_city_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_launcher_foreground"
+            android:scaleType="centerCrop"/>
+
+        <ImageButton
+            android:id="@+id/image_button_left_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/arrow_left"
+            android:onClick="previousCity" />
+
+        <ImageButton
+            android:id="@+id/image_button_right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:background="@drawable/arrow_right"
+            android:onClick="nextCity"
+            tools:ignore="RtlHardcoded" />
+
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/text_view_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="Province name"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/text_view_licence_plate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_view_city_name"
+
+            android:textSize="24sp"
+            android:text="Licence plate" />
+
+        <TextView
+            android:layout_below="@id/text_view_city_name"
+            android:id="@+id/text_view_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Explaination" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
