@@ -138,6 +138,75 @@ buttonComputeMass.setOnClickListener(new View.OnClickListener() {
 - Hocanın CalculatorActivity'de uyguladığı yöntem bundan faklı bir şey değil.Nesnelere dinleyici sınıf set etmek için setOnClickListener() methoduna this parametresi  gönderiyor. This CalculatorActivity'i referans ediyor.CalculatorActivity'de View.OnClickListener interfacesini implemente eden bir sınıf olduğundan değişen bir şey olmuyor.
 
 
+<hr><hr>
+<h1>Hafta 4</h1>
+
+- Android cihaz üreten bir çok üretici firma olduğundan piyasada çok faklı çözünürlükte android cihazlar bulunmaktadır.
+Bu nedenle uygulama tasarımlarının responsive yani cihaz çözürlüğüne göre boyutlanması gerekir. Bu amaçla linearLayout,
+RelativLayout,FrameLayout,Constraintlayout... gibi bir çok layout çeşidi oluşturulmuştur. Tasarım amacına uygun olarak 
+istenen layout çeşidi ile tasarım yapılabilir.
+
+<h4>LinearLayout</h4>
+    
+- Elemanlar yatay veya dikey olarak konumlanırlar.
+- Eğer orientation niteliğine vertical değeri verilirse dikey , horizontal değeri verilirse yatay olarak sıralanırlar.
+- Her satıra veya her stuna sadece bir eleman yerleşebilir.
+- Diğer bir önemli özelliği ise layout_weight'dir. Bu özellik ile elemanların kaplayacağı alan ağırlık  olarak verilir.
+Örneğin yatay sıralanan bir linearLayout'ta 2 eleman olsun. 1.elmanın layout_weight değeri 1  olsun. 2.elemanın laout_weight
+değeri 2 olsun. Bu durumda ekran yatayda üçe eşit parçaya bölünür. Birince elemana 1 parça 2.elemana ise 2 parça verilir.
+Not : elemanların genişlik değeri 0dp olmalıdır. 
+Not : Benzer mantık dikey linearLayout için de geçerlidir.
+
+
+<h4>ConstraintLayout</h4>
+
+- Her eleman kendisine verilen constraint(sınır) değerlerine göre konumlandırılır.
+
+
+<h4>RelativeLayout</h4>
+
+- Her eleman diğer bir elemana veya ekranın kenar ve köşelerine göre göreceli olarak konumlandırılır.
+
+- <strong>layout_above :  </strong> Hangi görsel öğenin id’si verilmişse onun üstünde görünür
+- <strong>layout_below :  </strong> Hangi görsel öğenin id’si verilmişse onun altında görünür
+- <strong>layout_toLeftOf :  </strong> Hangi görsel öğenin id’si verilmişse onun solunda görünür
+- <strong>layout_toRightOf :  </strong> Hangi görsel öğenin id’si verilmişse onun sağında görünür <br><br>
+
+- <strong>android:layout_alignParentBottom:</strong> İçine koyulduğu layout’un en altına yerleşmesine yarar. (true-false)
+- <strong>layout_alignParentLeft:</strong> İçine koyulduğu layout’un en soluna yerleşmesine yarar. (true-false) 
+- <strong>android:layout_alignParentRight:</strong> İçine koyulduğu layout’un en sağına yerleşmesine yarar. (true-false)
+- <strong>android:layout_alignParentTop :</strong> İçine koyulduğu layout’un en üstüne yerleşmesine yarar. (true-false)
+- ...
+
+
+
+
+
+
+<h4>FrameLayout</h4>
+
+- Ekran 9 parçaya bölünür. Elemanların hangi parçaya yerleşeceği layout_gravity özelliği ile belirtilir.
+  örneğin : layout_gravity = "bottom|right"  özelliği elemanı 9.parçaya yerleştirir.
+  
+  
+<h4>GridLayout</h4>
+ 
+ - Ekran matris yapısı gibi hücrelere bölünür. Elemanlar kendilerine verilen satır ve stun numarasına göre konumlandırılır.
+ örneğin : layout_column="0" layout_row="0" ile eleman 1. hücreye yerleştirilir.
+ 
+ 
+<h4>TableLayout</h4>
+ 
+ - Html'deki table yapısına benzerdir. Tabloya satır eklemek için ```<TableRow>``` etiketi , satırsaki elemanın ağırlığını belirlemek için ise layout_span özelliği kullanılır.
+ 
+
+ 
+  
+
+
+    
+
+
 
 
 
