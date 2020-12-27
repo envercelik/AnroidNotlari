@@ -229,6 +229,39 @@ karşılamasını istediğimiz uygulamaya uygun olmalıdır.
 
 
 
+<hr><hr>
+<h1>Hafta 6</h1>
+
+<h4>Permissions</h4>
+
+Api 23 (Marshmallow) öncesi tüm izinler uygulama indirilirken verilirdi. Api 23 ve sonrası için başlangıç izinleri yerine
+anlık izinlere geçildi.
+
+<h5>İzin Algoritması</h5>
+
+Örneğin uygulama kameraya erişmek istesin.
+
+- 1- Öncelikle izin kontrolu yapılır. (Kullanıcı bu uygulama için daha önceden kamera erişim izni vermiş mi ?)
+- 2- Platform kontrolü yapılır. (Api 23 öncesi mi sonrası mı ? - buna şuan(2020) gerek yok- yerine ActivityCompat geldi)
+- 3- Gerekli izin ile ilgili açıklama yapılır (isteğe bağlı)
+- 4- izin isteğide bulunulur
+- 5- izin isteğine verilen yanıt kontrol edilir. (izin verilmişse kameraya erişilir.) <br><br>
+
+- 1- checkSelfPermission()
+- 2- if(Build.VERSION.SDK_INT >=23)  
+- 3- shouldShowRequestPermissionRationale() --> Kullanıcının kafası karışıksa true döner - açıklama yaparız. <br>
+<stong>Kafası karışık olma durumu :</strong><br>
+Uygulama ilk kez çalıştırılıyorsa false döner . (kullanıcının kafası karışık değil) <br>
+Uygulama 2.kez veya daha fazla çalıştırılmışsa <br>
+--> Eğer izne daha önceden olumsuz yanıt verilmiş ise ve bir daha sorma **işaretlenmişse** false döner . (Kafa karışık değil) <br>
+--> Eğer izne daha önceden olumsuz yanıt verilmiş ise ve bir daha sorma **işaretlenmemişse** true döner (Kafa karışık -açıklama yaparız) <br>
+- 4- requestPermissions() --> gerekli izinler dizi olarak verilir. Ayrıca doğrulama amaçlı reuest_code verilir.
+- 5-onRequestPermissionResult()-->  verilen tüm izinleri bu method karşılar. Bu nedenle override edilmesi gerekir. Request code ile kullanıcının verdiği iznin istediğimiz izin olup olmadığı kontrol edilir.
+
+Not : Anlık izinler sadece dangerous permission için gereklidir.  Ör : kamera,konum,galeri…
+
+
+
 
 
 
