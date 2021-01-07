@@ -1,9 +1,29 @@
 # Android Ders Notları
-2020 Mobil programlama dersine ait, açıklamalar ile birlikte tüm uygulamalar, ödevler ve notlar
+2020 Mobil programlama dersine ait, tüm uygulamalar, ödevler ve notlar
+
+| Ders Notu   |      Uygulama      |  Ödev |
+|----------|:-------------:|------:|
+|[Hafta 1](#hafta1)|   | |
+|[Hafta 2](#hafta2)|[FirstApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App01FirstApp)|[Calculator](https://github.com/envercelik/YasinOrtakci/tree/main/App02Odev1Calculator) |
+|[Hafta 3](#hafta3) |[SecondApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App03SecondApplication) |[verilmedi](#) |
+|[Hafta 4](#hafta4) |[LayoutTypes](https://github.com/envercelik/YasinOrtakci/tree/main/App05LayoutTypes) |[Layouts](https://github.com/envercelik/YasinOrtakci/tree/main/App04Odev3Layouts) |
+|[Hafta 5](#hafta5) |[IntendApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App06IntentApplication)  |  [Intend](https://github.com/envercelik/YasinOrtakci/tree/main/App07Odev4Intend) |
+|[Hafta 6](#hafta6) |[CallApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App08CallApplication) |  [Permission](https://github.com/envercelik/YasinOrtakci/tree/main/App09Odev5Permission) |
+|[Hafta 7](#hafta7) |[LoginApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App10LoginApplication)|[SQLite](https://github.com/envercelik/YasinOrtakci/tree/main/App11Odev6SQLite) |
+|[Hafta 8](#hafta8) |[GoogleMap](https://github.com/envercelik/YasinOrtakci/tree/main/App12GoogleMap)   |   [GoogleMaps](https://github.com/envercelik/YasinOrtakci/tree/main/App13Odev7GoogleMaps)|
+|[Hafta 9](#hafta9) |[JSONApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App14JSONApplication) |   [JSON](https://github.com/envercelik/YasinOrtakci/tree/main/App15Odev8JSON)|
+|[eklenecek](#)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
+|[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
+|[eklenecek](#) |[FragmentApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication) |   eklenecek |
+|[eklenecek](#) |[eklenecek](#) | eklenecek |
+|[eklenecek](#) |[eklenecek](#)   |  eklenecek |
+
+
+
 
 # Hafta 1 
 <br>
-<h2>Android Nedir</h2>
+<h2 id="hafta1">Android Nedir</h2>
 
 - Andorid, linux çekirdeği üzerine geliştirilmiş açık kaynak kodlu işletim sistemidir.
 
@@ -98,7 +118,7 @@
 <hr><hr>
 
 
-<h1>Hafta 2</h1>
+<h1  id="hafta2">Hafta 2</h1>
 
 - Kullanıcının gördüğü arayüzlere Activity denir. Bir class ın Activity olabilmesi için AppCompatActivity classını extend etmesi gerekir.
 - Her activity onCreate method undan çalışmaya başlar.
@@ -117,7 +137,7 @@
 
 
 <hr><hr>
-<h1>Hafta 3</h1>
+<h1  id="hafta3">Hafta 3</h1>
 
 - View nesnelerine (TextView,EditText,Button...)  setOnClickListener() methodu ile dinleyici bir sınıf set edebiliriz.
 - setOnClickListener() methodu parametre olarak View.OnClickListener interface'sini implemente eden bir sınıf alır.
@@ -139,7 +159,7 @@ buttonComputeMass.setOnClickListener(new View.OnClickListener() {
 
 
 <hr><hr>
-<h1>Hafta 4</h1>
+<h1  id="hafta4">Hafta 4</h1>
 
 - Android cihaz üreten bir çok üretici firma olduğundan piyasada çok faklı çözünürlükte android cihazlar bulunmaktadır.
 Bu nedenle uygulama tasarımlarının responsive yani cihaz çözürlüğüne göre boyutlanması gerekir. Bu amaçla linearLayout,
@@ -202,7 +222,7 @@ Not : Benzer mantık dikey linearLayout için de geçerlidir.
 
 
 <hr><hr>
-<h1>Hafta 5</h1>
+<h1  id="hafta5">Hafta 5</h1>
 
 <h4>Intend </h4>
 
@@ -230,7 +250,7 @@ karşılamasını istediğimiz uygulamaya uygun olmalıdır.
 
 
 <hr><hr>
-<h1>Hafta 6</h1>
+<h1  id="hafta6">Hafta 6</h1>
 
 <h4>Permissions</h4>
 
@@ -263,7 +283,7 @@ Not : Anlık izinler sadece dangerous permission için gereklidir.  Ör : kamera
 
 
 <hr><hr>
-<h1>Hafta 7</h1>
+<h1  id="hafta7">Hafta 7</h1>
 <h4>SQLite</h4>
 
 - SQLite local veritabanı oluşturmak için kullanılan kütüphanedir. Android mimrasine gömülü olarak geldiğinden ekstra olarak uygulamaya eklemeye gerek yoktur.
@@ -285,7 +305,7 @@ Not : Anlık izinler sadece dangerous permission için gereklidir.  Ör : kamera
 
 
 <hr><hr>
-<h1>Hafta 8</h1>
+<h1  id="hafta8">Hafta 8</h1>
 <h4>Google Maps</h4>
 
 -Ugulamamızda google maps servisini kullanabilmek için google'dan bir api key almamız gerekir.
@@ -315,10 +335,10 @@ göre Address listesi döndürür. Address listesi bir int parametre ile sınır
 
 
 <hr><hr>
-<h1>Hafta 9</h1>
+<h1  id="hafta9">Hafta 9</h1>
 <h4>JSON</h4>
 
-- Json (Javanın oğlu) - tmm iğrençti :D  (JavaScript Object Notation) : veri taşıma formatıdır.
+- Json (JavaScript Object Notation) : veri taşıma formatıdır.
 - Hem makineler hem de insalar için kolay anlaşılan bir yapısı vardır.
 - Programlama dillerinden bağımsızdır ve bir çok programlama dili tarafından desteleniyor.
 - 2 veri yapısı kullanır. <br>
@@ -336,13 +356,13 @@ göre Address listesi döndürür. Address listesi bir int parametre ile sınır
   
 - İnternnetten json verisi çekmek için internet izni olması gerekir. 
   ```<uses-permission android:name="android.permission.INTERNET"/> android manifeste eklenir.```
-- Verilerin düzngün çkilebilmesi için  android manifest application tagının altına ```anroid:usesCleartextTraffic="true"```` eklenir.
+- Verilerin düzngün çkilebilmesi için  android manifest application tagının altına ```android:usesCleartextTraffic="true"``` eklenir.
 - volley kütüphanesini kullanabilmek için   implementation ```'com.android.volley:volley:1.1.1'```   satırı   build.gradle(Module) dependencies altında eklenir.
 
 
 <h5> Volley kütüphanesi :</h5> 
 
-- **StringRequest  :** bir client olarak sunucudan json verisi çekmek için kullanılır. Dönen değer bir RequestQueue nesnesine eklenmesi gerekir.
+- **StringRequest  :** bir client olarak sunucudan json verisi çekmek için kullanılır. Dönen değer bir RequestQueue 'e eklenmesi gerekir.
 
 - **parametreler :** request methodu , veri çekilecek adres(url) , gelen cevapları dinleyen ResponseListener nesnesi, hataları dinleyen ErrorListener nesnesi
 
