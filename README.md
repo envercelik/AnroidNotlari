@@ -14,9 +14,9 @@
 |[Hafta 9](#hafta9) |[JSONApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App14JSONApplication) |   [JSON](https://github.com/envercelik/YasinOrtakci/tree/main/App15Odev8JSON)|
 |[eklenecek](#)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
 |[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
-|[eklenecek](#) |[FragmentApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication) |   eklenecek |
+|[Hafta 12](#hafta12) |[FragmentApplication1](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication1) <br> [FragmentApplication2](https://github.com/envercelik/YasinOrtakci/tree/main/App22FragmentApplication2)|   - |
 |[eklenecek](#) |[eklenecek](#) | eklenecek |
-|[eklenecek](#) |[eklenecek](#)   |  eklenecek |
+|[eklenecek](#) |[eklenecek](#)   |  - |
 
 
 
@@ -423,7 +423,54 @@ implementation 'com.squareup.picasso:picasso:2.71828'
   
 
 
+<hr><hr>
+<h1  id="hafta12">Hafta 12</h1>
+<h4>Fragment</h4>
 
+
+- Fragment kendi layout'u ve sınıfı olan , activity'nin görevlerini yerene getirebilen,  activity'e benzer yapıdır.
+
+- Activity'e göre çok daha az kaynak tüketir ve daha performanslı çalışır.
+
+- Fragmentler bir Activity'e bağlı olarak çalışırlar. Tek başına çalışamazlar.
+
+- Bir Activity birden fazla fragment'e sahip olabilir.
+
+- Fragment bir view'dır. Bir fragment view 'a hangi class ile çalışacağı belirtilmelidir. 
+
+- Fragment bir activity değildir. Bu nedenle fragment class içersinden, activitiye özel methodlara doğrudan erişilemez.
+
+- Fragmentler statik veya dinamik olarak yüklenebilirler.
+
+- statik : fragment activity başlatıldığında yüklenir.
+
+- dinamik : fragment çalışma zamanında, örneğin bir butona tıklandığında oluşturulur.
+
+- onCreateView()  :  fragmentin layoutun'u döndürür. Layout ile ilgili gerekli initialize işlemleri bu method içerisinde yapılır.
+
+
+
+- ***Activity içerisinden dinamik olarak fragment yükleme :*** 
+
+```
+LoginFragment loginFragment = new LoginFragment();
+getSupportFragmentManager().beginTransaction().add(R.id.container,loginFragment).commit();
+```
+
+
+- ***Fragment içerisinden dinamik olarak fragment yükleme(değiştirme) :*** 
+
+
+```
+RegisterFragment registerFragment = new RegisterFragment();
+getFragmentManager().beginTransaction().replace(R.id.container,registerFragment).commit();
+```
+
+- registerFragment : yüklenecek fragment
+- R.id.container : fragmenin yükleneceği alanın id si
+
+
+- Not : eğer aynı container'a bir fragment varken add ile başka fragment eklersek öncekinin üzerine eklenir.Bu nedenle replace methodu kullanılır.
 
 
 
