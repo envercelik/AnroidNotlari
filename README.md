@@ -5,7 +5,7 @@
 |----------|:-------------:|------:|
 |[Hafta 1](#hafta1)|   | |
 |[Hafta 2](#hafta2)|[FirstApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App01FirstApp)|[Calculator](https://github.com/envercelik/YasinOrtakci/tree/main/App02Odev1Calculator) |
-|[Hafta 3](#hafta3) |[SecondApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App03SecondApplication) |[verilmedi](#) |
+|[Hafta 3](#hafta3) |[SecondApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App03SecondApplication) |- |
 |[Hafta 4](#hafta4) |[LayoutTypes](https://github.com/envercelik/YasinOrtakci/tree/main/App05LayoutTypes) |[Layouts](https://github.com/envercelik/YasinOrtakci/tree/main/App04Odev3Layouts) |
 |[Hafta 5](#hafta5) |[IntendApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App06IntentApplication)  |  [Intend](https://github.com/envercelik/YasinOrtakci/tree/main/App07Odev4Intend) |
 |[Hafta 6](#hafta6) |[CallApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App08CallApplication) |  [Permission](https://github.com/envercelik/YasinOrtakci/tree/main/App09Odev5Permission) |
@@ -15,7 +15,7 @@
 |[eklenecek](#)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
 |[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
 |[Hafta 12](#hafta12) |[FragmentApplication1](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication1) <br> [FragmentApplication2](https://github.com/envercelik/YasinOrtakci/tree/main/App22FragmentApplication2)|   - |
-|[eklenecek](#) |[eklenecek](#) | eklenecek |
+|[eklenecek](#) |[FragmentApplication3](https://github.com/envercelik/YasinOrtakci/tree/main/App23FragmentApplication3) <br> [FragmentApplication4](https://github.com/envercelik/YasinOrtakci/tree/main/App24FragmentApplication4)  <br> [FragmentApplication5](https://github.com/envercelik/YasinOrtakci/tree/main/App25FragmentApplication5) |  [Fragment](https://github.com/envercelik/YasinOrtakci/tree/main/App26Odev11Fragment) |
 |[eklenecek](#) |[eklenecek](#)   |  - |
 
 
@@ -357,7 +357,7 @@ göre Address listesi döndürür. Address listesi bir int parametre ile sınır
 - İnternnetten json verisi çekmek için internet izni olması gerekir. 
   ```<uses-permission android:name="android.permission.INTERNET"/> android manifeste eklenir.```
 - Verilerin düzngün çkilebilmesi için  android manifest application tagının altına ```android:usesCleartextTraffic="true"``` eklenir.
-- volley kütüphanesini kullanabilmek için   implementation ```'com.android.volley:volley:1.1.1'```   satırı   build.gradle(Module) dependencies altında eklenir.
+- volley kütüphanesini kullanabilmek için  ``` implementation 'com.android.volley:volley:1.1.1'```   satırı   build.gradle(Module) dependencies altında eklenir.
 
 
 <h5> Volley kütüphanesi :</h5> 
