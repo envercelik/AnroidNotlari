@@ -12,7 +12,7 @@
 |[Hafta 7](#hafta7) |[LoginApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App10LoginApplication)|[SQLite](https://github.com/envercelik/YasinOrtakci/tree/main/App11Odev6SQLite) |
 |[Hafta 8](#hafta8) |[GoogleMap](https://github.com/envercelik/YasinOrtakci/tree/main/App12GoogleMap)   |   [GoogleMaps](https://github.com/envercelik/YasinOrtakci/tree/main/App13Odev7GoogleMaps)|
 |[Hafta 9](#hafta9) |[JSONApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App14JSONApplication) |   [JSON](https://github.com/envercelik/YasinOrtakci/tree/main/App15Odev8JSON)|
-|[eklenecek](#)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
+|[Hafta 10](#hafta10)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
 |[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
 |[Hafta 12](#hafta12) |[FragmentApplication1](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication1) <br> [FragmentApplication2](https://github.com/envercelik/YasinOrtakci/tree/main/App22FragmentApplication2)|   - |
 |[Hafta 13](#hafta13) |[FragmentApplication3](https://github.com/envercelik/YasinOrtakci/tree/main/App23FragmentApplication3) <br> [FragmentApplication4](https://github.com/envercelik/YasinOrtakci/tree/main/App24FragmentApplication4)  <br> [FragmentApplication5](https://github.com/envercelik/YasinOrtakci/tree/main/App25FragmentApplication5) |  [Fragment](https://github.com/envercelik/YasinOrtakci/tree/main/App26Odev11Fragment) |
@@ -419,6 +419,65 @@ implementation 'com.squareup.picasso:picasso:2.71828'
 
 - **kullanım :** 
 ```Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageView);```
+
+
+
+
+
+  
+<hr><hr>
+<h1  id="hafta10">Hafta 10</h1>
+<h4>JSoup</h4> 
+  
+- Html kodunu parse eden kütüphanedir. 
+
+- Html kodu url üzerinden JSoup kütüphanesi veya volley gibi bir kütüphane kullanılarak çekilebilir.
+
+- JSoup ile url'den veri çekme : <br>
+
+``` 
+Document doc = Jsoup.connect("https://en.wikipedia.org/").get();
+``` 
+
+- Elimizde String tipinde html kodu olduğunu düşünelim.(örn: volley ile çektik) Öncelikle Document nesnesine dönüştürmeliyiz. <br>
+
+```
+String html = "html kodu";
+Document doc = Jsoup.parse(html);
+```
+
+- Document nesnesinden ihtiyacımız olan Elementleri(tagları) seçmek için css seçicileri (css selector) kullanırız.
+
+```
+Elements elementler=doc.select("css seçici komutu");
+```
+
+- elementler css seçici komutumuza göre Document nesnesinden seçilen tagları tutan dizidir.
+
+- Element nesnesine ait methodlar ile tagdan istediğimiz veriyi çekebiliriz. Veya varsa alt elementleri seçebiliriz.
+
+- örn : ```element.text()``` ile tag'a ait metin alınabilir.
+
+- örn : ```element.attr("href")```  tag'ın href niteliğinin değeri alınabilir.
+
+- örn : ```element.nextElementSibling();```  aynı düzede bulunan diğer tag'a geçer.
+
+- örn : ```element.children();``` element'in içinde bulunan elementleri döner. (bir alt elementler)
+
+
+- css seçici komutu, html koduna ve seçilmek istenen elementlere göre değişir.
+
+- örn : ```doc.select("span.containerDuyuruBaslikLabel");```  class'i containerDuyuruBaslikLabel olan span tagları seçilir.
+
+- örn : ```doc.select("div.HaberBoxHeader a");```  class'i HaberBoxHeader olan divlerin altında bulunan 'a' taglari seçilir. 
+
+- [Selector Syntax](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+
+- [Element sınıfı](https://jsoup.org/apidocs/org/jsoup/nodes/Element.html)
+
+
+
+
   
   
 
@@ -558,7 +617,6 @@ public static ReceiverFragment newInstance(String name) {
 
 
 
-  
 
 
 
