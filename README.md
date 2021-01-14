@@ -3,7 +3,7 @@
 
 | Ders Notu   |      Uygulama      |  Ödev |
 |----------|:-------------:|------:|
-|[Hafta 1](#hafta1)|   | |
+|[Hafta 1](#hafta1)| [Ders uygulamalarına ait tüm kodlar](https://github.com/envercelik/YasinOrtakci/tree/main/App00OrjinalDersKodlar%C4%B1) | |
 |[Hafta 2](#hafta2)|[FirstApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App01FirstApp)|[Calculator](https://github.com/envercelik/YasinOrtakci/tree/main/App02Odev1Calculator) |
 |[Hafta 3](#hafta3) |[SecondApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App03SecondApplication) |- |
 |[Hafta 4](#hafta4) |[LayoutTypes](https://github.com/envercelik/YasinOrtakci/tree/main/App05LayoutTypes) |[Layouts](https://github.com/envercelik/YasinOrtakci/tree/main/App04Odev3Layouts) |
@@ -15,7 +15,7 @@
 |[eklenecek](#)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
 |[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
 |[Hafta 12](#hafta12) |[FragmentApplication1](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication1) <br> [FragmentApplication2](https://github.com/envercelik/YasinOrtakci/tree/main/App22FragmentApplication2)|   - |
-|[eklenecek](#) |[FragmentApplication3](https://github.com/envercelik/YasinOrtakci/tree/main/App23FragmentApplication3) <br> [FragmentApplication4](https://github.com/envercelik/YasinOrtakci/tree/main/App24FragmentApplication4)  <br> [FragmentApplication5](https://github.com/envercelik/YasinOrtakci/tree/main/App25FragmentApplication5) |  [Fragment](https://github.com/envercelik/YasinOrtakci/tree/main/App26Odev11Fragment) |
+|[Hafta 13](#hafta13) |[FragmentApplication3](https://github.com/envercelik/YasinOrtakci/tree/main/App23FragmentApplication3) <br> [FragmentApplication4](https://github.com/envercelik/YasinOrtakci/tree/main/App24FragmentApplication4)  <br> [FragmentApplication5](https://github.com/envercelik/YasinOrtakci/tree/main/App25FragmentApplication5) |  [Fragment](https://github.com/envercelik/YasinOrtakci/tree/main/App26Odev11Fragment) |
 |[eklenecek](#) |[eklenecek](#)   |  - |
 
 
@@ -473,6 +473,87 @@ getFragmentManager().beginTransaction().replace(R.id.container,registerFragment)
 - Not : eğer aynı container'a bir fragment varken add ile başka fragment eklersek öncekinin üzerine eklenir.Bu nedenle replace methodu kullanılır.
 
 
+
+
+
+<hr><hr>
+<h1  id="hafta13">Hafta 13</h1>
+<h4>Fragment Devamı</h4>
+
+<h5>Fragment ile activity arasında veri alışverişi :</h5>
+
+- Önemli bilgi : Bir Activity başlatıldığında içerisinde tanımlı fragmentlerin **onAttach()** methodu çalışır. Kapatıldığında ise **onDetach()** methodu çalışır.
+  Bu methodların **context** parametresine, fragment hangi Activity'den yüklenmişse onun context'i atanır.
+
+- Activity'e fragmentten veri göndermek için Activity'e ait bir method kullanılabilir. Veri bu methoda parametre olarak verilir.
+ (Color uygulamasında bu yöntem kullanılarak renk verisi alınıyor.)
+
+- Peki fragment'ten Activity'e ait bir methodu nasıl çağırırız ?  Bunun için onAttach methoduna atanan context parametresini kullanırız.
+
+- Kısaca onAttach methodunda Activity'nin context'i alınır. Bu context ile Activity'nin methodları kullanılarak veri gönderilir.
+
+**Ek bilgiler :** <br>
+
+- interface sınıflar için bir arayüz - çatı görevi görür.
+
+- Eğer bir sınıf bir interface'yi implemente eder ise onun methodlarını tanımlamak(sağlamak) zorundadır.
+
+- Eğer bir sınıf bir interfaceyi implemente eder ise bu interface'nin referansı bu sınıfın nesnelerinin referansı olarak kullanılabilir.(polymorphism)
+
+
+
+<h5>Fragmentler(static olanlar) arası veri alışverişi : </h5>
+
+
+- Veri gönderen fragment, veriyi Activity'e ait methoda parametre olarak verir. (önceki örnekte olduğu gibi)
+
+- Activity'de veri gönderilecek fragmenti id'sine göre bulur  ve veriyi bu fragment'e ait methoda parametre olarak verir.
+
+
+id sine göre fragmenti bulma örnek kod : 
+
+```
+ReceiverFragment receiverFragment =(ReceiverFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_reciever);
+receiverFragment.setName(name);
+```
+
+
+
+<h5>Fragment ile dinamik olarak oluşturulan fragment arası veri alışverişi :</h5>
+
+Yukarıdaki örneğe benzerdir ama veri gönderilecek fragment, id'sine göre bulunmaz. newInstance() methodu ile oluşturulur.
+
+Veri ise bu newInstance() methoduna parametre olarak verilir.
+
+Örnek kod :
+
+- new instace ile fragment örneği oluşturma <br>
+
+```
+ReceiverFragment receiverFragment=ReceiverFragment.newInstance(name);
+```
+- fragment'in dinamik olarak yüklenmesi <br>
+```
+getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,receiverFragment).commit();
+```
+
+
+**- veri alan fragment :** <br>
+
+- new instance methodu :
+
+```
+public static ReceiverFragment newInstance(String name) {
+        ReceiverFragment fragment = new ReceiverFragment();
+        Bundle args = new Bundle();
+        args.putString("name", name);
+        fragment.setArguments(args);
+        return fragment;
+}
+```
+
+- veri, onCreate'de bu kod ile alınır ve global değişkene atanabilir. <br>
+```name = getArguments().getString("name");```
 
 
 
