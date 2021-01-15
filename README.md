@@ -13,7 +13,7 @@
 |[Hafta 8](#hafta8) |[GoogleMap](https://github.com/envercelik/YasinOrtakci/tree/main/App12GoogleMap)   |   [GoogleMaps](https://github.com/envercelik/YasinOrtakci/tree/main/App13Odev7GoogleMaps)|
 |[Hafta 9](#hafta9) |[JSONApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App14JSONApplication) |   [JSON](https://github.com/envercelik/YasinOrtakci/tree/main/App15Odev8JSON)|
 |[Hafta 10](#hafta10)|[JSOUPApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App17JsoupApplication) |[JSOUP](https://github.com/envercelik/YasinOrtakci/tree/main/App18Odev9JSOUP) |
-|[eklenecek](#) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
+|[Hafta 11](#hafta11) |[AsyncTaskApplication](https://github.com/envercelik/YasinOrtakci/tree/main/App19AsyncTaskApplication) |  [AsyncTask](https://github.com/envercelik/YasinOrtakci/tree/main/App20Odev10AsyncTask) |
 |[Hafta 12](#hafta12) |[FragmentApplication1](https://github.com/envercelik/YasinOrtakci/tree/main/App21FragmentApplication1) <br> [FragmentApplication2](https://github.com/envercelik/YasinOrtakci/tree/main/App22FragmentApplication2)|   - |
 |[Hafta 13](#hafta13) |[FragmentApplication3](https://github.com/envercelik/YasinOrtakci/tree/main/App23FragmentApplication3) <br> [FragmentApplication4](https://github.com/envercelik/YasinOrtakci/tree/main/App24FragmentApplication4)  <br> [FragmentApplication5](https://github.com/envercelik/YasinOrtakci/tree/main/App25FragmentApplication5) |  [Fragment](https://github.com/envercelik/YasinOrtakci/tree/main/App26Odev11Fragment) |
 |[eklenecek](#) |[eklenecek](#)   |  - |
@@ -474,6 +474,32 @@ Elements elementler=doc.select("css seçici komutu");
 - [Selector Syntax](https://jsoup.org/cookbook/extracting-data/selector-syntax)
 
 - [Element sınıfı](https://jsoup.org/apidocs/org/jsoup/nodes/Element.html)
+
+
+<hr><hr>
+<h1  id="hafta11">Hafta 11</h1>
+<h4>AsyncTask</h4> 
+
+
+- AsyncTask, UI thread'i dondurmamak için bazı işlemleri (ör : 10 sn'e süren download işlemi) arka planda (başka bir thread'de) yapan abstract-generic bir sınıftır.
+
+- Bu sınıfı kullanmak için miras alır ve amacımıza uygun olarak özelleştiririz.
+
+- **onPreExecute() :** thread execute edilince ilk çalışan methoddur. Gerekli ön işlemler bu method içerisinde yapılır. ör : progress bar oluşturma
+
+- **doInBackground() :** arka planda yapılması istenen işlem (ör : bir metni indirme) bu mehod içerisinde yapılır.
+
+- **onProgressUpdate() :** doInBackground() methodu ile birlikte çalışır. Yapılan işin miktarı gösterilir. Ör : yapılan işin %10'u tamamlandı. publishProgress() methodu ile çağrılır.
+
+- **onPostExecute():** İşlem tamamlandığında çalışan methoddur. (doInBackground() methodu bittiğinde çalışır.doInBackground() geri dönüş değeri bu methoda paramtre olarak verilir. )
+
+Not : AsyncTask sınıfı generictir. <> arasına alınan parametreler override edilen methodların parametrelerini belirler.
+
+Ör : AsyncTask<String,Integer,String>
+
+- 1.parametre(String) : doInBackground() methodunun parametresidir. 
+- 2.parametre(Integer): onProgressUpdate() methodunun parametresidir.
+- 3.parametre(String) : doInBackground() methodunun geri dönüş tipi ve onPostExecute() methodunun paramtresidir.
 
 
 
